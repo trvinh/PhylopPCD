@@ -13,11 +13,9 @@ Depends: R (>= 4.6.0)
 Encoding: UTF-8
 biocViews: Software, Visualization, DataRepresentation, MultipleComparison, FunctionalPrediction, DimensionReduction
 Imports:
-    ape, bioDist, BiocStyle, Biostrings, bit64, bsplus, colourpicker,
-    data.table, dplyr, DT, energy, fastcluster, ggplot2, gridExtra, htmlwidgets,
-    pbapply, plotly, RColorBrewer, RCurl, scattermore, shiny, shinycssloaders, 
-    shinyFiles, shinyjs, stringr, tsne, svglite, umap, xml2, zoo, yaml
+    BiocStyle, DT, RCurl, bit64, bsplus, colourpicker, data.table, dplyr, 
+    htmlwidgets, shiny, shinyFiles, shinycssloaders, shinyjs, svglite, yaml,
+    PhyloProfile (>= 2.4.4)
 Suggests: knitr, rmarkdown, testthat, OmaDB
 VignetteBuilder: knitr
-Config/roxygen2/version: 8.0.0
-
+Config/roxygen2/version: 8.1.0

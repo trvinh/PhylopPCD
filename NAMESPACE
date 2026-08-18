@@ -2,14 +2,34 @@
 
 export(runPhylopPCD)
 import(BiocStyle)
-import(DT)
 import(PhyloProfile)
-import(RCurl, except = reset)
-import(ape)
-import(data.table)
-import(energy)
-import(ggplot2)
-import(shinyBS)
-import(shinycssloaders)
-import(shinyjs, except = colourInput)
+import(bit64, except = c(setdiff, intersect, union, setequal))
+import(bsplus)
+import(data.table, except = c(first, last, between))
+import(dplyr)
+import(shiny, except = c(dataTableOutput, renderDataTable, markdown))
+import(svglite)
+importFrom(DT,
+  dataTableOutput,
+  renderDataTable
+)
+importFrom(RCurl,url.exists)
 importFrom(colourpicker,colourInput)
+importFrom(htmlwidgets,saveWidget)
+importFrom(shinyFiles,
+  parseDirPath,
+  shinyDirButton,
+  shinyDirChoose
+)
+importFrom(shinycssloaders,withSpinner)
+importFrom(shinyjs,
+  disable,
+  enable,
+  html,
+  reset,
+  toggleState
+)
+importFrom(yaml,
+  read_yaml,
+  write_yaml
+)

@@ -1,6 +1,7 @@
 #' Run PhyloCellulase app
 #' @export
 #' @return A shiny application - GUI version of PhyloProfile
+#' @rawNamespace import(shiny, except = c(dataTableOutput, renderDataTable, markdown))
 #' @import BiocStyle
 #' @rawNamespace import(bit64, except = c(setdiff, intersect, union, setequal))
 #' @import bsplus
@@ -15,6 +16,7 @@
 #' @importFrom RCurl url.exists
 #' @importFrom htmlwidgets saveWidget
 #' @import svglite
+#' @import PhyloProfile
 
 runPhylopPCD <- function(){
     appDir <- system.file("PhyloProfile", package = "PhylopPCD")
