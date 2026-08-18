@@ -2,17 +2,19 @@
 #' @export
 #' @return A shiny application - GUI version of PhyloProfile
 #' @import BiocStyle
-#' @import DT
+#' @rawNamespace import(bit64, except = c(setdiff, intersect, union, setequal))
+#' @import bsplus
 #' @importFrom colourpicker colourInput
-#' @import energy
-#' @import shinyBS
-#' @import shinycssloaders
-#' @import PhyloProfile
-#' @import ape
-#' @import data.table
-#' @import ggplot2
-#' @rawNamespace import(RCurl, except = reset)
-#' @rawNamespace import(shinyjs, except = colourInput)
+#' @rawNamespace import(data.table, except = c(first, last, between))
+#' @import dplyr
+#' @importFrom DT dataTableOutput renderDataTable
+#' @importFrom shinycssloaders withSpinner
+#' @importFrom shinyjs enable disable reset html toggleState
+#' @importFrom shinyFiles shinyDirButton shinyDirChoose parseDirPath
+#' @importFrom yaml read_yaml write_yaml
+#' @importFrom RCurl url.exists
+#' @importFrom htmlwidgets saveWidget
+#' @import svglite
 
 runPhylopPCD <- function(){
     appDir <- system.file("PhyloProfile", package = "PhylopPCD")

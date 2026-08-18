@@ -258,7 +258,9 @@ createProfilePlot <- function(
         dt <- brushedPoints(
             dataHeat(), input$plotBrush, xvar = "supertaxon", yvar = "geneID"
         )
+        dt$geneID <- factor(dt$geneID)
         dt$geneID <- droplevels(dt$geneID)
+        dt$supertaxon <- factor(dt$supertaxon)
         dt$supertaxon <- droplevels(dt$supertaxon)
         return(dt)
     })
@@ -295,15 +297,27 @@ createProfilePlot <- function(
             if (hv > 25000) hv <- 25000
             if (wv > 25000) wv <- 25000
             if (h <= 20) {
-                updateSelectInput(
-                    session, "legendPosSub", label = "Legend position:",
-                    choices = list("Right" = "right",
-                                   "Left" = "left",
-                                   "Top" = "top",
-                                   "Bottom" = "bottom",
-                                   "Hide" = "none"),
-                    selected = "top"
-                )
+                if (superRank() == "") {
+                    updateSelectInput(
+                        session, "legendPosSub", label = "Legend position:",
+                        choices = list("Right" = "right",
+                                       "Left" = "left",
+                                       "Top" = "top",
+                                       "Bottom" = "bottom",
+                                       "Hide" = "none"),
+                        selected = "top"
+                    )
+                } else {
+                    updateSelectInput(
+                        session, "legendPosSub", label = "Legend position:",
+                        choices = list("Right" = "right",
+                                       "Left" = "left",
+                                       "Top" = "top",
+                                       "Bottom" = "bottom",
+                                       "Hide" = "none"),
+                        selected = "right"
+                    )
+                }
                 updateNumericInput(session, "widthSub", value = wv  + 50)
             } else if (h <= 30) {
                 updateNumericInput(session, "widthSub", value = wv + 50)

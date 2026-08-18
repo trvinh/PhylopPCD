@@ -1,6 +1,6 @@
 Package: PhylopPCD
-Version: 0.0.2
-Date: 2025-05-15
+Version: 2.5.4
+Date: 2026-08-18
 Title: PhylopPCD
 Authors@R: c(
     person("Vinh", "Tran", role = c("aut", "cre"), email = "tran@bio.uni-frankfurt.de"),
@@ -9,14 +9,15 @@ Description: PhyloProfile is a tool for exploring complex phylogenetic profiles.
 URL: https://github.com/BIONF/PhylopPCD/
 BugReports: https://github.com/BIONF/PhylopPCD/issues
 License: MIT + file LICENSE
-Depends: R (>= 4.4.0)
+Depends: R (>= 4.6.0)
 Encoding: UTF-8
 biocViews: Software, Visualization, DataRepresentation, MultipleComparison, FunctionalPrediction, DimensionReduction
 Imports:
-    ape, BiocStyle, colourpicker, data.table, DT, energy, ggplot2, RCurl,
-    shinyBS, shinyjs, shinycssloaders, PhyloProfile (>= 2.0.1)
-RoxygenNote: 7.3.2
-Suggests:
-    knitr, rmarkdown, testthat, bioDist, Biostrings,
-    gridExtra, pbapply, RColorBrewer, shiny, OmaDB, plyr, xml2, zoo
+    ape, bioDist, BiocStyle, Biostrings, bit64, bsplus, colourpicker,
+    data.table, dplyr, DT, energy, fastcluster, ggplot2, gridExtra, htmlwidgets,
+    pbapply, plotly, RColorBrewer, RCurl, scattermore, shiny, shinycssloaders, 
+    shinyFiles, shinyjs, stringr, tsne, svglite, umap, xml2, zoo, yaml
+Suggests: knitr, rmarkdown, testthat, OmaDB
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.0.0
+

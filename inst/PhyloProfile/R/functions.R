@@ -7,20 +7,7 @@
 #' input list) or "sortedGenes" (genes should be ordered by this list)
 #' @return data either sorted or non-sorted
 #' @author Vinh Tran {tran@bio.uni-frankfurt.de}
-# sortGeneIDs <- function(data, orderType, geneOrder){
-#     data$geneID <- as.factor(data$geneID)
-#     if (orderType == "none") {
-#         # keep user defined geneID order
-#         data$geneID <- factor(data$geneID, levels = unique(data$geneID))
-#     } else if (orderType == "user defined") {
-#         # keep user defined geneID order
-#         if (length(geneOrder[1]) == 0) return(data)
-#         if (names(geneOrder[1]) == "sortedGenes") {
-#             data$geneID <- factor(data$geneID, levels = geneOrder$sortedGenes)
-#         }
-#     }
-#     return(data)
-# }
+
 sortGeneIDs <- function(data, orderType, geneOrder) {
     # Check if geneID is already a factor; if not, convert it
     if (!is.factor(data$geneID)) {
@@ -227,6 +214,7 @@ adaptPlotSize <- function(nrTaxa = 0, nrGene = 0, xAxis = "taxa", dotZoom = 0) {
 
 scale01 <- function(x){(x-min(x))/(max(x)-min(x))}
 
+#' Helper function to read single-column files
 #' @param fileInput fileInput object
 #' @return vector of unique values in input file
 
@@ -236,6 +224,10 @@ readSingleColFile <- function(fileInput) {
         return(unique(labels))
     }
     return(NULL)
+}
+
+idWithSuffix <- function(base, suffix) {
+    if (suffix == "") base else paste0(base, suffix)
 }
 
 # FUNCTIONS FOR RENDER UI ELEMENTS ============================================
