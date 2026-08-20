@@ -73,11 +73,11 @@ shinyServer(function(input, output, session) {
             msg <- paste0(
                 paste("Please wait while fasta data are being downloaded!!!", getwd())
             )
-            createAlert(
-                session, "fileExistMsgUI", "fileExistMsg", title = "",
-                content = msg,
-                append = FALSE
-            )
+            # createAlert(
+            #     session, "fileExistMsgUI", "fileExistMsg", title = "",
+            #     content = msg,
+            #     append = FALSE
+            # )
             download.file(
                 "https://applbio.biologie.uni-frankfurt.de/download/cellulase_pp_data.tar.gz",
                 destfile = "cellulase_pp_data.tar.gz",
